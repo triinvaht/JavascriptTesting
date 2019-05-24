@@ -24,4 +24,14 @@ describe('Address Book', function () {
         addressBook.deleteContact(0);
         expect(addressBook.getContact(0)).not.toBeDefined();
     });
+
+    //test
+    describe('Async Address Book', function () {
+        it('should grab inital contacts', function () {
+            var addressBook = new AddressBook();
+
+            addressBook.getInitialContacts();
+            expect(addressBook.initialComplete).toBe(true);
+        });
+    });
 });
