@@ -14,3 +14,8 @@ AddressBook.prototype.addContact = function (contact) {
 AddressBook.prototype.getContact = function (index) {
     return this.contacts[index];
 };
+
+//deleteContact kustutab kontakti listist id järgi
+AddressBook.prototype.deleteContact = function (index) {
+    this.contacts.splice(index, 1);
+};
