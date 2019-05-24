@@ -27,10 +27,17 @@ describe('Address Book', function () {
 
     //test
     describe('Async Address Book', function () {
-        it('should grab inital contacts', function () {
-            var addressBook = new AddressBook();
+        var addressBook = new AddressBook();
 
-            addressBook.getInitialContacts();
+        // callback tagasi ja siis saab alles testida
+        beforeEach(function (done) {
+            addressBook.getInitialContacts(function () {
+                // Tehtud
+                done();
+            });
+        });
+
+        it('should grab inital contacts', function () {
             expect(addressBook.initialComplete).toBe(true);
         });
     });
